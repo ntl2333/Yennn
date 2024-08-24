@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc Mừng Sinh Nhật</title>
+    
+    <!-- Meta tags for social media sharing -->
+    <meta property="og:title" content="Chúc Mừng Sinh Nhật Đặc Biệt">
+    <meta property="og:description" content="Một lời chúc sinh nhật đặc biệt dành cho người thân yêu của bạn!">
+    <meta property="og:image" content="https://i.imgur.com/RbwEqRR.jpg">
+    <meta property="og:url" content="https://your-website-url.com">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Nunito:wght@400;700&family=Signika:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            overflow: hidden;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .container {
+            position: relative;
+            width: 90vw;
+            height: 90vh;
+            max-width: 1000px;
+            max-height: 800px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .birthday-wish {
+            z-index: 10;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            padding: 20px;
+            max-width: 80%;
+            margin: 0 auto;
+        }
+        .birthday-wish h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 36px;
+            color: #ffffff;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .birthday-wish p {
+            font-size: 18px;
+            color: #ffffff;
+            line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+        .image-item {
+            position: absolute;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            transition: all 0.5s ease;
+        }
+        .image-item:hover {
+            transform: scale(1.1) rotate(0deg) !important;
+            z-index: 20;
+            box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+        }
+        .image-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #ff69b4;
+            transform: rotate(45deg);
+            animation: heartFall linear infinite;
+        }
+        .heart::before,
+        .heart::after {
+            content: "";
+            width: 20px;
+            height: 20px;
+            background: #ff69b4;
+            border-radius: 50%;
+            position: absolute;
+        }
+        .heart::before {
+            left: -10px;
+        }
+        .heart::after {
+            top: -10px;
+        }
+        @keyframes heartFall {
+            0% {
+                transform: translateY(-100vh) rotate(45deg);
+            }
+            100% {
+                transform: translateY(100vh) rotate(45deg);
+            }
+        }
+        .balloon {
+            position: fixed;
+            bottom: -100px;
+            width: 80px;
+            height: auto;
+            z-index: 99;
+            animation: balloonRise 15s ease-in-out infinite;
+        }
+        @keyframes balloonRise {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(var(--tx), -120vh) rotate(var(--tr)); }
+        }
+        .balloon-border {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 10px;
+            background: repeating-linear-gradient(
+                45deg,
+                #ff6b6b,
+                #ff6b6b 10px,
+                #feca57 10px,
+                #feca57 20px
+            );
+        }
+        #musicControl {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        #musicControl:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        /* Mobile-specific styles */
+        @media (max-width: 768px) {
+            .birthday-wish {
+                padding: 15px;
+                max-width: 90%;
+            }
+            .birthday-wish h1 {
+                font-size: 28px;
+            }
+            .birthday-wish p {
+                font-size: 16px;
+            }
+            .image-item {
+                width: 80px !important;
+                height: 80px !important;
+            }
+            .balloon {
+                width: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="birthday-wish">
+            <h1>Chúc mừng ngày đặc biệt của em!</h1>
+            <p>Chúc em tuổi mới mau ăn chóng lớn,<br>
+            bớt làm anh lo nè, luôn vui vẻ<br>
+            và ngày càng xinh đẹp rực rỡ nhoaaa</p>
+        </div>
+        <div class="image-item" style="width: 150px; height: 150px; top: 5%; left: 5%; transform: rotate(-5deg);">
+            <img src="https://i.imgur.com/RbwEqRR.jpg" alt="Hình ảnh sinh nhật 1" />
+        </div>
+        <div class="image-item" style="width: 130px; height: 130px; top: 5%; right: 5%; transform: rotate(3deg);">
+            <img src="https://i.imgur.com/Nr1P8YL.jpg" alt="Hình ảnh sinh nhật 2" />
+        </div>
+        <div class="image-item" style="width: 140px; height: 140px; bottom: 5%; left: 5%; transform: rotate(-2deg);">
+            <img src="https://i.imgur.com/EG66h3H.jpg" alt="Hình ảnh sinh nhật 3" />
+        </div>
+        <div class="image-item" style="width: 160px; height: 160px; bottom: 5%; right: 5%; transform: rotate(4deg);">
+            <img src="https://i.imgur.com/lJoECue.jpg" alt="Hình ảnh sinh nhật 4" />
+        </div>
+        <div class="image-item" style="width: 120px; height: 120px; top: 50%; left: 0; transform: translateY(-50%) rotate(-3deg);">
+            <img src="https://i.imgur.com/9bRwLCn.jpg" alt="Hình ảnh sinh nhật 5" />
+        </div>
+        <div class="image-item" style="width: 130px; height: 130px; top: 50%; right: 0; transform: translateY(-50%) rotate(2deg);">
+            <img src="https://i.imgur.com/0OZmDcB.jpg" alt="Hình ảnh sinh nhật 6" />
+        </div>
+        <div class="image-item" style="width: 110px; height: 110px; top: 0; left: 50%; transform: translateX(-50%) rotate(-1deg);">
+            <img src="https://i.imgur.com/uy6iIBv.jpg" alt="Hình ảnh sinh nhật 7" />
+        </div>
+    </div>
+    
+    <img src="https://i.imgur.com/W8vzB9C.png" alt="Balloon 1" class="balloon" style="left: 10%; --tx: 20vw; --tr: 15deg;">
+    <img src="https://i.imgur.com/NA1iaWP.png" alt="Balloon 2" class="balloon" style="left: 25%; --tx: -15vw; --tr: -10deg;">
+    <img src="https://i.imgur.com/NJNLful.png" alt="Balloon 3" class="balloon" style="left: 40%; --tx: 10vw; --tr: 5deg;">
+    <img src="https://i.imgur.com/6Oz51IG.png" alt="Balloon 4" class="balloon" style="left: 55%; --tx: -5vw; --tr: -20deg;">
+    <img src="https://i.imgur.com/p9pOmMz.png" alt="Balloon 5" class="balloon" style="left: 70%; --tx: 15vw; --tr: 25deg;">
+    <img src="https://i.imgur.com/I06Rywv.png" alt="Balloon 6" class="balloon" style="left: 85%; --tx: -10vw; --tr: -15deg;">
+    
+    <div class="balloon-border"></div>
+    
+    <button id="musicControl">♫</button>
+    <audio id="backgroundMusic" loop>
+        <source src="https://cdn.pixabay.com/download/audio/2022/03/24/audio_9ec4a2bc21.mp3?filename=happy-birthday-piano-music-115580.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+            document.body.appendChild(heart);
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+        setInterval(createHeart, 300);
+
+        const music = document.getElementById('backgroundMusic');
+        const musicControl = document.getElementById('musicControl');
+        let isPlaying = false;
+
+        musicControl.addEventListener('click', function() {
+            if (isPlaying) {
+                music.pause();
+                musicControl.textContent = '♫';
+            } else {
+                music.play();
+                musicControl.textContent = '⏸';
+            }
+            isPlaying = !isPlaying;
+        });
+
+        // Restart balloon animations
+        function restartBalloons() {
+            const balloons = document.querySelectorAll('.balloon');
+            balloons.forEach(balloon => {
+                balloon.style.animation = 'none';
+                balloon.offsetHeight; // Trigger reflow
+                balloon.style.animation = null;
+            });
+        }
+
+        // Restart animations every 15 seconds
+        setInterval(restartBalloons, 15000);
+    </script>
+</body>
+</html>
